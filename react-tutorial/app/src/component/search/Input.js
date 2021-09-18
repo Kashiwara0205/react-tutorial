@@ -2,13 +2,25 @@ import { useState } from 'react';
 
 const SearchBtn = (props) => {
   function handleSubmit() {
-    props.setSearchValue(props.searchValue)
-    console.log('Pushed Search Btn');
+    props.setParentSearchValue(props.searchValue)
   }
-    
+
   return (
     <button onClick={ handleSubmit }>
       Search
+    </button>
+  )
+}
+
+const ResetBtn = (props) => {
+  function handleSubmit() {
+    props.setParentSearchValue("")
+    props.setSearchValue("")
+  }
+
+  return (
+    <button onClick={ handleSubmit }>
+      Reset
     </button>
   )
 }
@@ -30,6 +42,7 @@ function Input(props){
             <td>
               <input 
                 type="text" 
+                value={searchValue} 
                 name="name" 
                 onChange={ handleChange }
               />
@@ -38,7 +51,14 @@ function Input(props){
             <td>
               <SearchBtn 
                 searchValue={searchValue}
-                setSearchValue={ props.setSearchValue }
+                setParentSearchValue={ props.setSearchValue }
+            />
+            </td>
+
+            <td>
+              <ResetBtn 
+                setSearchValue={ setSearchValue }
+                setParentSearchValue={ props.setSearchValue }
             />
             </td>
 
