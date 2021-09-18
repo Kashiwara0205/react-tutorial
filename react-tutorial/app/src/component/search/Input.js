@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types'
 
 const SearchBtn = (props) => {
   function handleSubmit() {
@@ -10,6 +11,11 @@ const SearchBtn = (props) => {
       Search
     </button>
   )
+}
+
+SearchBtn.propTypes = {
+  setParentSearchValue: PropTypes.func,
+  searchValue: PropTypes.string
 }
 
 const ResetBtn = (props) => {
@@ -24,6 +30,12 @@ const ResetBtn = (props) => {
     </button>
   )
 }
+
+ResetBtn.propTypes = {
+  setParentSearchValue: PropTypes.func,
+  setSearchValue: PropTypes.func
+}
+
 
 function Input(props){
   const [searchValue, setSearchValue] = useState("");
@@ -67,6 +79,10 @@ function Input(props){
       </table>
     </div>
   )
+}
+
+Input.propTypes = {
+  setSearchValue: PropTypes.func
 }
 
 export default Input
