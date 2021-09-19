@@ -2,21 +2,18 @@ import { useState } from 'react';
 import './App.css';
 import Welcome from './component/welcome/Welcome'
 import SearchInput from  './component/search/Input'
+import NameTable from './component/name_table/table'
 
 function App() {
   const [searchValue, setSearchValue] = useState("");
+  const [ nameRecords ]  = useState([{id: 1, name: "xxx"}, {id: 2, name: "ooo"}, {id: 3, name: "ppp"}]);
 
-  const text = "hello world"
   return (
     <div className="App">
-      <p> { text } </p>
-      <SearchInput
-        setSearchValue={ setSearchValue }
-      />
+      <Welcome name="React" />
+      <SearchInput setSearchValue={ setSearchValue } />
       <p> Your search word is [ { searchValue } ] </p>
-      <Welcome name="Sara" />
-      <Welcome name="Cahal" />
-      <Welcome name="Edite" />
+      <NameTable records={nameRecords}/>
     </div>
   );
 }

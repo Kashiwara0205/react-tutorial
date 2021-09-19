@@ -36,7 +36,6 @@ ResetBtn.propTypes = {
   setSearchValue: PropTypes.func
 }
 
-
 function Input(props){
   const [searchValue, setSearchValue] = useState("");
 
@@ -46,7 +45,6 @@ function Input(props){
 
   return (
     <div>
-      <p> SearchValue: </p>
       <table>
         <tbody>
           <tr>
