@@ -53,7 +53,7 @@ function Input(props){
               <input 
                 type="text" 
                 value={searchValue} 
-                name="name" 
+                name="name"
                 onChange={ handleChange }
               />
             </td>

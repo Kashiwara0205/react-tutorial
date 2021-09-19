@@ -16,7 +16,8 @@ Row.propTypes = {
 
 function Table(props){
 
-  const Rows = props.records.map((m) => <Row id={m.id} name={m.name} key={m.id}></Row>)
+  const Rows = props.records.filter((f) => props.searchValue === "" ? true : f.name === props.searchValue)
+                            .map((m) => <Row id={m.id} name={m.name} key={m.id}></Row>)
 
   return (
     <table border="true">
@@ -34,7 +35,8 @@ function Table(props){
 }
 
 Table.propTypes = {
-  records: PropTypes.array
+  records: PropTypes.array,
+  searchValue: PropTypes.string
 }
 
 export default Table
