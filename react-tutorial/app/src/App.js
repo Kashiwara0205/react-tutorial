@@ -4,6 +4,7 @@ import Welcome from './component/welcome/Welcome'
 import SearchInput from  './component/search/Input'
 import NameTable from './component/name_table/table'
 import Counter from './component/counter/counter'
+import ReduxCounter from './component/redux_counter/Counter'
 
 function App() {
   const [searchValue, setSearchValue ] = useState("");
@@ -24,6 +25,10 @@ function App() {
 
       <div className="Counter">
         <Counter count={count} setParentCountValue={ setCountValue }></Counter>
+      </div>
+
+      <div className="ReduxCounter">
+        <ReduxCounter></ReduxCounter>
       </div>
 
     </div>
